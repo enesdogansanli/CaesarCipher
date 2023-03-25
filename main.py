@@ -1,4 +1,6 @@
 from tkinter import *
+from PIL import ImageTk, Image
+import matplotlib.pyplot as plt
 
 my_app = Tk()
 my_app.title("Caesar Cipher App")
@@ -37,8 +39,33 @@ def encryption():
     entry_3.delete(0,END)
     entry_3.insert(0,result)
 
+def analysis_letter():
+    my_text = entry_3.get()
+    my_text = my_text.lower()
+    counter = {}
+    for letter in my_text:
+        counter[letter] = counter.get(letter, 0) + 1
+    
+    sourted_counter = sorted(counter.items(), key=lambda x:x[1],reverse=True)
+    sourted_counter = dict(sourted_counter)
+
+    del sourted_counter[" "]
+
+    names = list(sourted_counter.keys())
+    values = list(sourted_counter.values())
+    plt.bar(range(len(sourted_counter)), values, tick_label=names)
+    plt.savefig('Cipher_text_letter_analysis.png')
+
+    my_image1 = ImageTk.PhotoImage(Image.open("Cipher_text_letter_analysis.png"))
+    my_label = Label(image=my_image1)
+    my_label.grid(row=5,column=0,columnspan=3)
+
+
      
 button_1 = Button(my_app,text="Encryption the text",command=encryption)
 button_1.grid(row=2,column=0,columnspan=3)
+
+button_2 = Button(my_app,text="Letter frequency analysis for ciphertext",command=analysis_letter)
+button_2.grid(row=4,column=0,columnspan=3)
 
 my_app.mainloop()

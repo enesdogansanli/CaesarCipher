@@ -79,7 +79,7 @@ def analysis_letter_for_reference_text():
 
     return sourted_counter
 
-def decryption_and_performance():
+def decryption_the_text():
     decryption_text = ""
     my_cipher_text = entry_3.get()
     encrypt_text_dict = new_list1 = list(map(list,analysis_letter_for_encryption_text().items()))
@@ -93,10 +93,31 @@ def decryption_and_performance():
         if i in encrypt_text_dict:
             decryption_text = decryption_text+encrypt_text_dict[i]
         elif i==" ":
-            decryption_text = decryption_text+i
+            decryption_text = decryption_text+i     
     
     entry_5.delete(0,END)
     entry_5.insert(0,decryption_text)
+
+    return decryption_text
+
+def performance_text():
+    decryption_text = decryption_the_text()
+    plain_text = entry_1.get()
+    true_value = 0
+    false_value = 0
+    for i in range(len(decryption_text)):
+        if decryption_text[i]==plain_text[i]:
+            true_value +=1
+        else:
+            false_value+=1
+    
+    performance_result = ((true_value)/(true_value+false_value))*100
+    performance_result = str(performance_result)
+
+    result_label = Label(my_app, text="%"+performance_result)
+    result_label.grid(column=1,row=8, sticky=EW, padx=5, pady=5)
+        
+
 
 
 plain_text_label = Label(my_app, text="Enter plain text: ")
@@ -132,10 +153,13 @@ entry_4.grid(row=5,column=1,padx=10,pady=10,sticky=EW)
 button_3 = Button(my_app,text="Letter frequency analysis for reference text",command=analysis_letter_for_reference_text)
 button_3.grid(row=6,column=0,sticky=EW)
 
-button_4 = Button(my_app,text="Decryption text and performance",command=decryption_and_performance)
+button_4 = Button(my_app,text="Decryption text",command=decryption_the_text)
 button_4.grid(row=7,column=0,sticky=EW)
 
 entry_5 = Entry(my_app,borderwidth=5)
 entry_5.grid(row=7,column=1,padx=10,pady=10,sticky=EW)
+
+button_5 = Button(my_app,text="Performance result",command=performance_text)
+button_5.grid(row=8,column=0,sticky=EW)
 
 my_app.mainloop()

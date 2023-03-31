@@ -2,7 +2,7 @@
 
 ## REQUIREMENTS
 
-**Python version:  3.9.13**
+* **Python version:  3.9.13**
 
 ```python
 # Run command on the project location for installation of all libraries

@@ -77,11 +77,6 @@ def analysis_letter_for_reference_text():
     my_label2.image = my_image2
     my_label2.grid(row=0,column=4,sticky=EW)
 
-    my_image1 = PhotoImage(file="Cipher_text_letter_analysis.png")
-    my_label1 = Button(my_app,image=my_image1)
-    my_label1.image = my_image1
-    my_label1.grid(row=0,column=3,sticky=EW)
-
 def decryption_the_text():
     decryption_text = ""
     my_cipher_text = entry_3.get()

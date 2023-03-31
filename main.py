@@ -53,8 +53,6 @@ def analysis_letter_for_encryption_text():
     my_label1.image = my_image1
     my_label1.grid(row=0,column=3,sticky=EW)
 
-    # return encryption_text_sorted_counter
-
 def analysis_letter_for_reference_text():
     global reference_text_sorted_counter
     my_text = entry_4.get()
@@ -74,7 +72,6 @@ def analysis_letter_for_reference_text():
     plt.bar(range(len(reference_text_sorted_counter)), values, tick_label=names)
     plt.savefig('Reference_text_letter_analysis.png',dpi= 70)
 
-    # TODO: Resimlerin aynı anda ekrande gösterilmesi üzerine çalış.
     my_image2 = PhotoImage(file="Reference_text_letter_analysis.png")
     my_label2 = Button(my_app,image=my_image2)
     my_label2.image = my_image2
@@ -84,8 +81,6 @@ def analysis_letter_for_reference_text():
     my_label1 = Button(my_app,image=my_image1)
     my_label1.image = my_image1
     my_label1.grid(row=0,column=3,sticky=EW)
-
-    # return reference_text_sorted_counter
 
 def decryption_the_text():
     decryption_text = ""

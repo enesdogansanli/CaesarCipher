@@ -1,5 +1,7 @@
 # CAESAR CIPHER
 
+This project is a modern Python implementation of the Caesar Cipher, one of the earliest known encryption techniques in classical cryptography. Beyond basic encryption and decryption capabilities, the application offers advanced text analysis features through an intuitive graphical user interface. The program includes sophisticated cryptanalysis tools such as frequency analysis of encrypted texts and comparison with reference texts, making it an invaluable learning tool for students and enthusiasts interested in understanding encryption algorithms and classical cryptography principles. The application also provides performance metrics to evaluate the effectiveness of different encryption scenarios. Whether used for educational purposes or basic encryption needs, this implementation offers a comprehensive solution that combines historical cryptographic methods with modern analytical capabilities, demonstrating the fundamental concepts of encryption in a practical and accessible way.
+
 ## REQUIREMENTS
 
 * **Python version:  3.9.13**
@@ -9,19 +11,6 @@
 pip install -r requirements.txt
 ```
 
-## USAGE
+![Application interface](docs/images/1.PNG)
 
-1. Install Python (3.9.13)
-2. Install required libraries (you can use requirement.txt file)
-3. Enter plain text
-4. Enter the key number for the shift
-5. Push to button for shown the cipher text (button: Encryption the text)
-6. Push to the button for cipher text letter frequency analysis (button: Letter frequency analysis for cipher text)
-7. Enter reference text
-8. Push to the button for reference text letter frequency analysis (button: Letter frequency analysis for reference text)
-9. Push to the button for decryotion (button: Decryption text)
-10. Push to the button for performance result (button: Performance result)
-
-![Application interface](images/1.PNG)
-
-![Example](images/2.PNG)
+![Example](docs/images/2.PNG)
